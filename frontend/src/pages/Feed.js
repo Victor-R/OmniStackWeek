@@ -15,6 +15,7 @@ export default class Feed extends Component {
     };
 
     async componentDidMount() {
+        this.registerToSocket();
         const response = await api.get('posts');
 
         this.setState({ feed: response.data });
@@ -61,7 +62,7 @@ export default class Feed extends Component {
 
                             <footer>
                                 <div className='actions'>
-                                    <button type='button' onClick={() => this.handleLike(post.id)}>
+                                    <button type='button' onClick={() => this.handleLike(post._id)}>
                                         <img src={like} alt='' />
                                     </button>
                                     <img src={comment} alt='' />

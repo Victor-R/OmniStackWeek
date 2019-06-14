@@ -4,7 +4,7 @@ module.exports = {
 
     async store(req, res) {
         const post = await Post.findById(req.params.id);
-
+        
         post.likes += 1; // Soma um Like :D
 
         await post.save();
