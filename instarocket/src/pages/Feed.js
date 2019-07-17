@@ -29,7 +29,7 @@ export default class Feed extends Component {
     }
 
     registerToSocket = () => {
-        const socket = io('http://192.168.0.107:3333');
+        const socket = io('https://instarocket.herokuapp.com');
 
         socket.on('post', newPost => {
             this.setState({
@@ -73,7 +73,7 @@ export default class Feed extends Component {
                             <Image source={more} />
                         </View>
                         
-                        <Image style={styles.feedImage} source={{ uri: `http://192.168.0.107:3333/files/${item.image}` }} />
+                        <Image style={styles.feedImage} source={{ uri: `https://instarocket.herokuapp.com/files/${item.image}` }} />
                         
 
                         <View style={styles.feedItemFooter}>
